@@ -7,10 +7,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "tsc -w",
         "link": "npm unlink practice && npm link",
-        "ci": "npm run lint && npm run test && npm run build",
+        "lint": "tsc",
+        "ci": "npm run lint && npm run build",
         "publish": "npm run ci && changesets publish",
         "build": "tsup src/index.ts --format cjs,esm --dts"
     },
