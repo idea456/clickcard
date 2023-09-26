@@ -11,6 +11,12 @@ export default class AuthCommand {
     constructor() {
         dotenv.config();
 
+        if (!fs.existsSync("./env"))
+            fs.writeFile("./env", "", (err) => {
+                if (err)
+                    throw Error(`Could not store credentials: ${err.message}`);
+            });
+
         this.config = dotenv.parse(fs.readFileSync(".env"));
 
         if (!this.config["CLICKUP_API_TOKEN"])
