@@ -9,12 +9,16 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "tsc -w",
-        "link": "npm unlink practice && npm link"
+        "link": "npm unlink practice && npm link",
+        "ci": "npm run lint && npm run test && npm run build",
+        "publish": "npm run ci && changesets publish",
+        "build": "tsup src/index.ts --format cjs,esm --dts"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "@types/node": "^20.7.0",
+        "tsup": "^7.2.0",
         "typescript": "^5.2.2"
     },
     "dependencies": {
