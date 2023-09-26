@@ -2,6 +2,7 @@
 
 import fs from "fs";
 import { Command } from "commander";
+import { AuthCommand } from "./commands";
 
 const program = new Command();
 
@@ -17,5 +18,11 @@ program
         console.log("total", total);
     })
     .description("add numbers");
+
+const authCommand = new AuthCommand();
+program
+    .command("auth")
+    .action(authCommand.action)
+    .description("authenticates to Clickup");
 
 program.parse(process.argv);

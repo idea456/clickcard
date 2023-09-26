@@ -4,7 +4,7 @@
     "display": "Node LTS",
     "_version": "18.1.0",
     "compilerOptions": {
-        "lib": ["es2023"],
+        "lib": ["es2023", "DOM"],
         "module": "node16",
         "outDir": "dist",
         "target": "es2022",
